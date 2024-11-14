@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  menu-opciones-app:
+  deuda-crediticia-app:
     build: .
-    container_name: menu-opciones-app
+    container_name: deuda-crediticia-app
     ports:
-      - "3004:3000"
+      - "3001:3000"
   
   nginx:
     image: nginx:latest
-    container_name: nginx-menu-opciones
+    container_name: nginx-deuda-crediticia
     ports:
-      - "8084:80"
+      - "8081:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
-      - menu-opciones-app
+      - deuda-crediticia-app
